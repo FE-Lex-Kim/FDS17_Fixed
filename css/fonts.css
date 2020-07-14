@@ -1,4 +1,5 @@
 @font-face {
+    /* 웹폰트 선언한것. */
     font-family: 'webcafeIcon';
     font-weight:400;
     src: url('font/webcafeIcon.eot');

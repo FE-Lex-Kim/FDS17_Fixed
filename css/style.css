@@ -1,0 +1,20 @@
+/* @charset "utf-8" */
+/* html과 같이 해줘야함. 이제는 자동으로 해줌 */
+@import url(./normalize.css);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+/* 다른 css파일을 가져올수 있음. 세미콜론 필수! */
+/* 항상 첫줄에 @사인을 해줘야함 */
+/* at sign 기호 */
+html{
+  font-size: 10px;
+}
+
+body{
+  font-family: 'Spoqa Han Sans';
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #181818; 
+  background-color: #fff;
+  margin: 5px;
+  /* m5px m이 margin의 줄임말*/
+}
