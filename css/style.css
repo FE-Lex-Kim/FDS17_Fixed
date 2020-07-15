@@ -5,6 +5,10 @@
 /* 다른 css파일을 가져올수 있음. 세미콜론 필수! */
 /* 항상 첫줄에 @사인을 해줘야함 */
 /* at sign 기호 */
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
 html{
   font-size: 10px;
 }
@@ -15,6 +19,64 @@ body{
   font-size: 1.6rem;
   color: #181818; 
   background-color: #fff;
-  margin: 5px;
   /* m5px m이 margin의 줄임말*/
+}
+
+/* 레이아웃 */
+.container{
+  background-color: #fff;
+}
+
+
+.header{
+  background-color: yellow;
+  /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
+}
+.visual{
+  background-color: lime;
+  height: 120px;
+  /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
+}
+/* 메인 콘텐츠 */
+.main{
+  background-color: blue;
+  padding: 0 15px;
+  overflow: hidden;
+  min-height: 450px;
+  /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
+}
+.header, .visual, .main, .slogan, .footer{
+  width: 940px;
+  margin: 0 auto;
+}
+.group{
+  float: left;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.group1{
+  background-color: pink;
+  width: 250px;
+  float: right;
+}
+
+.group2{
+  background-color: lightgreen;
+  width: 380px;
+}
+.group3{
+  background-color: coral;
+  width: 190px;
+}
+.slogan{
+  background-color: orange;
+  /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
+}
+.footer-bg{
+  background-color: purple;
+  /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
+}
+.footer{
+  background-color: skyblue;
+  /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
 }
