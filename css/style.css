@@ -18,6 +18,7 @@ html{
 }
 
 body{
+  
   font-family: 'Spoqa Han Sans';
   font-weight: 400;
   font-size: 1.6rem;
@@ -25,10 +26,16 @@ body{
   background-color: #fff;
   /* m5px m이 margin의 줄임말*/
 }
-
+.footer-bg{
+  justify-self: unset;
+}
 /* 레이아웃 */
 .container{
   background-color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 
@@ -44,30 +51,21 @@ body{
 /* 메인 콘텐츠 */
 .main{
   background-color: blue;
-  padding: 0 15px;
-  /* overflow: hidden; */
   min-height: 450px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 30px;
+  align-items: flex-start;
+  /* flex-flow로 같이 쓰는 습관을 가져야함 기본값으로 해주더라도 */
   /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
-}
-.clearfix::after{
-  /* 계속 .main으로 하면 중복되서 만들어 지므로
-  처음부터 .clearfix을 하고 원하는 float 태그에 클래스를 넣어주면 됨. */
-  content: "";
-  /* 컨텐츠가 있어야 태그자체가 생성됨.
-  없으면 아예 생성이안됨 */
-  /* css로 만든가짜요소 */
-  clear: both;
-  display: block;
 }
 
 .header, .visual, .main, .slogan, .footer{
   width: 940px;
-  margin: 0 auto;
 }
 .group{
   float: left;
-  margin-left: 15px;
-  margin-right: 15px;
 }
 .group1{
   background-color: pink;
@@ -88,9 +86,16 @@ body{
 }
 .footer-bg{
   background-color: purple;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
 }
 .footer{
   background-color: skyblue;
   /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
 }
+
+/* flow-direction 을 row 방식으로 하는것을 강사님이 추천함
+좀더 유연하게함 */
