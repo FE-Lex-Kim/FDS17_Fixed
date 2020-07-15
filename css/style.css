@@ -2,6 +2,10 @@
 /* html과 같이 해줘야함. 이제는 자동으로 해줌 */
 @import url(./normalize.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+/* html안에 링크태그로 스타일css파일을 안가져오는 이유는 sass같은 프레임워크를 쓸때 압축하는데 그때
+압축된 파일을 쪼개서 쓰므로 유지보수가 쉬움*/
+
 /* 다른 css파일을 가져올수 있음. 세미콜론 필수! */
 /* 항상 첫줄에 @사인을 해줘야함 */
 /* at sign 기호 */
@@ -41,10 +45,21 @@ body{
 .main{
   background-color: blue;
   padding: 0 15px;
-  overflow: hidden;
+  /* overflow: hidden; */
   min-height: 450px;
   /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
 }
+.clearfix::after{
+  /* 계속 .main으로 하면 중복되서 만들어 지므로
+  처음부터 .clearfix을 하고 원하는 float 태그에 클래스를 넣어주면 됨. */
+  content: "";
+  /* 컨텐츠가 있어야 태그자체가 생성됨.
+  없으면 아예 생성이안됨 */
+  /* css로 만든가짜요소 */
+  clear: both;
+  display: block;
+}
+
 .header, .visual, .main, .slogan, .footer{
   width: 940px;
   margin: 0 auto;
@@ -57,7 +72,6 @@ body{
 .group1{
   background-color: pink;
   width: 250px;
-  float: right;
 }
 
 .group2{
