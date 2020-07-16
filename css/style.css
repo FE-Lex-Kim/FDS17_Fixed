@@ -25,6 +25,18 @@ body{
   background-color: #fff;
   /* m5px m이 margin의 줄임말*/
 }
+
+/* 숨김 컨텐츠 */
+.a11y-hidden{
+  position: absolute;
+  /* absolute 를 하면 크기를 차지 하지않음 */
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  /* 마진 음수 공부해보기. */
+  clip-path: polygon(0 0,0 0,0 0);
+}
 /* 링크 스타일 */
 a {
   text-decoration: none;
@@ -54,9 +66,10 @@ a {
 /* 로고 */
 .logo{
   position: absolute;
-  top: 45px;
-  left: 65px;
+  top: 25px;
+  left: 60px;
 }
+
 /* 멤버링크 */
 .member{
   list-style: none;
@@ -82,10 +95,43 @@ a {
   padding: 2px 8px 2px 3px;
 }
 
-/* 
-.member [aria-hidden]{
-  margin: 0 5px;
-} */
+/* 메인메뉴 */
+.menu{
+  background:rgba(219,124,35,1) linear-gradient(to bottom, rgba(242,197,48,1) 0%,rgba(219,124,35,1) 35%,rgba(211,99,33,1) 51%,rgba(219,124,35,1) 70%,rgba(242,197,48,1) 100%);
+  /* gradient를 지원하지 않는 브라우저도 고려해서 만듬 앞에 linear앞에 붙여 넣어서 */
+  padding-left: 0;
+  list-style: none;
+  margin: 0 0 50px 0;
+  padding-left: 225px;
+  border-top: 2px solid #000;
+  border-radius: 0 0 5px 5px;
+}
+.menu::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.menu-item{
+  float: left;
+}
+.btn-menu{
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border: 0;
+  border-left: 2px solid rgba(255, 255, 255, 0.85);
+  padding: 15px 20px;
+  cursor: pointer;
+  text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+  /* 텍스트의 그림자를 살짝준다 0값은 흐릿하게 만드는것 */
+}
+.sub-menu{
+  background-color: pink;
+  position: absolute;
+  display: none;
+}
 /* span태그를 선택한게아니라 [] 으로 선택해서 함 */
 .visual{
   background-color: lime;
