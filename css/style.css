@@ -2,6 +2,8 @@
 /* html과 같이 해줘야함. 이제는 자동으로 해줌 */
 @import url(./normalize.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+/* @import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css); */
+@import url(./fontello.css);
 
 /* html안에 링크태그로 스타일css파일을 안가져오는 이유는 sass같은 프레임워크를 쓸때 압축하는데 그때
 압축된 파일을 쪼개서 쓰므로 유지보수가 쉬움*/
@@ -69,7 +71,6 @@ a {
   top: 25px;
   left: 60px;
 }
-
 /* 멤버링크 */
 .member{
   list-style: none;
@@ -79,41 +80,40 @@ a {
   margin-right: -8px;
   /* 음수값을 주면 어떻게되는지 */
   font-size: 0;
+  /* list 사이에 공백박스가 생기므로 fontsize를 0으로 준다 */
   text-align: right;
 }
-
 .member li, .member a{
   display: inline-block;
 }
-
 .member li{
   font-size: 1.4rem;
 }
-
 .member a{
   text-transform: uppercase;
   padding: 2px 8px 2px 3px;
 }
-
 /* 메인메뉴 */
 .menu{
   background:rgba(219,124,35,1) linear-gradient(to bottom, rgba(242,197,48,1) 0%,rgba(219,124,35,1) 35%,rgba(211,99,33,1) 51%,rgba(219,124,35,1) 70%,rgba(242,197,48,1) 100%);
   /* gradient를 지원하지 않는 브라우저도 고려해서 만듬 앞에 linear앞에 붙여 넣어서 */
   padding-left: 0;
   list-style: none;
-  margin: 0 0 50px 0;
+  margin: 0 0 35px 0;
   padding-left: 225px;
   border-top: 2px solid #000;
   border-radius: 0 0 5px 5px;
+  height: 50px;
 }
-.menu::after{
+/* .menu::after{
   content: '';
   display: block;
   clear: both;
-}
-
+} */
+/* menu에 높이 50값을 줘서 필요가없음. */
 .menu-item{
   float: left;
+  position: relative;
 }
 .btn-menu{
   background-color: transparent;
@@ -121,15 +121,73 @@ a {
   font-size: 1.6rem;
   font-weight: 700;
   border: 0;
+  line-height: 48px;
   border-left: 2px solid rgba(255, 255, 255, 0.85);
-  padding: 15px 20px;
+  padding: 0 20px;
   cursor: pointer;
   text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
   /* 텍스트의 그림자를 살짝준다 0값은 흐릿하게 만드는것 */
 }
+.menu-act .btn-menu{
+  color: #ff0;
+}
+.menu-act .btn-menu::after{
+  content: '';
+  display: block;
+  background-color: #000;
+  height: 2px;
+  /* 크기가 2px만큼 줄어줘서 border bottom 처럼줌 */
+}
 .sub-menu{
-  background-color: pink;
   position: absolute;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+.sub-menu li, .sub-menu a{
+  display: inline-block;
+  margin-right: 1em;
+}
+.sub-menu a{
+  padding: 8px 0;
+}
+.sub-menu a::before{
+  content: '\f192';
+  font-family: 'fontello';
+  display: inline-block;
+  width: 1em;
+  margin-right: .2em;
+  margin-left: .2em;
+}
+.sub-menu a:hover::before, .sub-menu a:focus::before{
+  content: '\e800';
+  /* a태그에 마우스가 올라갔을때 체크로 바껴야하므로 */
+  /* focus 까지 같이 줘서 포커스가 됬을떄도 체크 모양으로 바뀌게됨. */
+}
+
+.sub-menu1,.sub-menu2,.sub-menu3{
+  left: 0;
+}
+.sub-menu4,.sub-menu5,.sub-menu6{
+  right: 0;
+}
+.sub-menu1{
+  display: block;
+}
+.sub-menu2{
+  display: none;
+}
+.sub-menu3{
+  display: none;
+}
+.sub-menu4{
+  display: none;
+}
+.sub-menu5{
+  display: none;
+}
+.sub-menu6{
   display: none;
 }
 /* span태그를 선택한게아니라 [] 으로 선택해서 함 */
@@ -150,7 +208,6 @@ a {
   /* flex-flow로 같이 쓰는 습관을 가져야함 기본값으로 해주더라도 */
   /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
 }
-
 .header, .visual, .main, .slogan, .footer{
   width: 940px;
 }
@@ -161,7 +218,6 @@ a {
   background-color: pink;
   width: 250px;
 }
-
 .group2{
   background-color: lightgreen;
   width: 380px;
