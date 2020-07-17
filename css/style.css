@@ -2,7 +2,7 @@
 /* html과 같이 해줘야함. 이제는 자동으로 해줌 */
 @import url(./normalize.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-/* @import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css); */
+/* @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css); */
 @import url(./fontello.css);
 
 /* html안에 링크태그로 스타일css파일을 안가져오는 이유는 sass같은 프레임워크를 쓸때 압축하는데 그때
@@ -24,7 +24,8 @@ body{
   font-weight: 400;
   font-size: 1.4rem;
   color: #181818;
-  background-color: #fff;
+  background: url(./images/bg_flower.png) no-repeat 50% 0 scroll,#fff linear-gradient(to bottom, #ccc 0%, #fff 70%, #fff 100%) ;
+  /* 파라미터로 각도나 방향을 주면 그라디언트를 줄수 있다. 시작점이 0퍼센트 퍼센트로 중간중간 색갈을 바꿔준다.*/
   /* m5px m이 margin의 줄임말*/
 }
 
@@ -49,7 +50,6 @@ a {
 }
 /* 레이아웃 */
 .container{
-  background-color: gray;
   display: flex;
   justify-content: center;
   flex-flow: column nowrap;
@@ -191,10 +191,61 @@ a {
   display: none;
 }
 /* span태그를 선택한게아니라 [] 으로 선택해서 함 */
+/* 비주얼 */
+@keyframes textAni{
+  0%{
+    font-size: 12px;
+    color: rgba(0,0,0,0);
+    transform: translate(0,0);
+  }
+  100%{
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    transform: translate(400px,75px);
+  }
+}
+
+@keyframes bgAni{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
 .visual{
-  background-color: lime;
   height: 120px;
+  position: relative;
   /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
+}
+.visual::before, .visual::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  animation: bgAni 2s infinite ease-in-out alternate;
+}
+
+.visual::before{
+  background-image: url(./images/ani_flower_01.png), url(./images/ani_flower_02.png) ;
+  background-position: 0 -10px, 670px 0;
+}
+
+.visual::after{
+  background-image: url(./images/ani_flower_03.png), url(./images/ani_flower_04.png) ;
+  background-position: 300px 0, 800px 20px;
+  animation-delay: 1s;
+}
+
+.visual-text{
+  animation: textAni 500ms ease-in-out forwards;
+  /* 끝난 상태로 나둔다. */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2.4rem;
+  width: 500px;
 }
 /* 메인 콘텐츠 */
 .main{
