@@ -30,7 +30,7 @@ body{
 }
 
 /* 숨김 컨텐츠 */
-.a11y-hidden{
+.a11y-hidden, legend{
   position: absolute;
   /* absolute 를 하면 크기를 차지 하지않음 */
   width: 1px;
@@ -105,11 +105,11 @@ a {
   border-radius: 0 0 5px 5px;
   height: 50px;
 }
-/* .menu::after{
+.clearfix::after{
   content: '';
   display: block;
   clear: both;
-} */
+}
 /* menu에 높이 50값을 줘서 필요가없음. */
 .menu-item{
   float: left;
@@ -277,6 +277,99 @@ a {
   background-color: coral;
   width: 190px;
 }
+/* 로그인 */
+.login{
+  background-color: #db5629;
+  background-image: radial-gradient(circle at right top, #ef962f, #db5629);
+  border-radius: 5px;
+  box-shadow: 5px 10px 0 0 #ccc;
+  padding: 10px;
+  /* margin boxsizing:border-box에 영향이 없다 크기가 커져도 마진은 영향이 없다. boxsizing더 공부. */
+}
+.login-heading{
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #ff0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-left: 10px;
+  /* 고정형이면 px 단위 반응형이면 퍼센트 단위 */
+}
+
+.login-form{
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px 10px 0 10px;
+}
+.login-form div{
+  margin-right: 5px;
+  width: 150px;
+}
+.login-form fieldset{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: relative;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #aaa;
+}
+.login-form label{
+  display: inline-block;
+  width: 55px;
+}
+.login-form input{
+  width: 90px;
+  height: 24px;
+  border: 1px solid #aaa;
+  padding: 1px 1px 1px 0.5em;
+}
+.btn-login{
+  width: 52px;
+  height: 50px;
+  border-radius: 3px;
+  border: 0;
+  padding: 5px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #db5629;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.member-only{
+  background-color: #fff;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.member-only li:first-child{
+  float: left;
+}
+
+.member-only li:last-child{
+  float: right;
+}
+.member-only a{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /* 왜 안겹치지? */
+}
+
+.member-only a::before{
+  content: '\e803';
+  font-family: 'fontello';
+  display: inline-block;
+  margin-right: .2em;
+  text-align: center;
+  color: #ef962f;
+}
+/* 슬로건 */
 .slogan{
   background-color: orange;
   /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
