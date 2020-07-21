@@ -284,6 +284,7 @@ a {
   border-radius: 5px;
   box-shadow: 5px 10px 0 0 #ccc;
   padding: 10px;
+  width: calc(100% - 5px);
   /* margin boxsizing:border-box에 영향이 없다 크기가 커져도 마진은 영향이 없다. boxsizing더 공부. */
 }
 .login-heading{
@@ -358,7 +359,7 @@ a {
 .member-only a{
   padding-top: 5px;
   padding-bottom: 5px;
-  /* 왜 안겹치지? */
+  /* 왜 안겹치지? a태그 자체가 인라인이여서 padding을 주면 클릭 가능 버튼 자체가 커진다.*/
 }
 
 .member-only a::before{
@@ -369,6 +370,47 @@ a {
   text-align: center;
   color: #ef962f;
 }
+/* 유효성 검사 배너 링크 */
+.validation-list{
+  padding: 0;
+  margin-top: 25px;
+  list-style: none;
+  margin-bottom: 0;
+}
+.validation-list a{
+  display: block;
+  padding: 8px 10px 8px 45px;
+  border:  1px solid #aaa;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: #ccc;
+  background-image: url(./images/validation_icon.png), linear-gradient(180deg, #ccc,#aaa);
+  background-repeat: no-repeat, repeat;
+  background-position: 15px 50%, 0 0;
+}
+
+.validation-list a:hover{
+  color: #f00;
+}
+/* .validation-list li{
+  list-style: none;
+}
+.validation-list a::before{
+  content: '';
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-image: url(../css/images/validation_icon.png);
+}
+.validation-list li a{
+  width: 250px;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #aaa;
+  border: 1px solid #aaa;
+} */
+
 /* 슬로건 */
 .slogan{
   background-color: orange;
