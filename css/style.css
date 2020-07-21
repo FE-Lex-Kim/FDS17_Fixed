@@ -50,17 +50,17 @@ a {
 }
 /* 레이아웃 */
 .container{
-  display: flex;
+  /* display: flex;
   justify-content: center;
   flex-flow: column nowrap;
-  align-items: center;
+  align-items: center; */
 }
 
 /* 해더 */
 .header{
   background-color: #fff;
   border-radius: 0 0 15px 15px;
-  padding: 0 30px 0 30px;
+  padding: 1px 30px;
   position: relative;
   /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
 }
@@ -249,32 +249,33 @@ a {
 }
 /* 메인 콘텐츠 */
 .main{
-  background-color: blue;
   min-height: 450px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   padding: 30px;
   align-items: flex-start;
+  background-color: #fff;
+  border-radius: 15px 15px 0 0 ;
   /* flex-flow로 같이 쓰는 습관을 가져야함 기본값으로 해주더라도 */
   /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
 }
 .header, .visual, .main, .slogan, .footer{
   width: 940px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .group{
   float: left;
 }
 .group1{
-  background-color: pink;
+  /* background-color: pink; */
   width: 250px;
 }
 .group2{
-  background-color: lightgreen;
   width: 380px;
 }
 .group3{
-  background-color: coral;
   width: 190px;
 }
 /* 로그인 */
@@ -296,7 +297,9 @@ a {
   padding-left: 10px;
   /* 고정형이면 px 단위 반응형이면 퍼센트 단위 */
 }
-
+.user-email{
+  margin-bottom: 10px;
+}
 .login-form{
   background-color: #fff;
   border-top-left-radius: 5px;
@@ -312,7 +315,7 @@ a {
   padding: 0;
   border: 0;
   position: relative;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #aaa;
 }
 .login-form label{
@@ -327,7 +330,7 @@ a {
 }
 .btn-login{
   width: 52px;
-  height: 50px;
+  height: 58px;
   border-radius: 3px;
   border: 0;
   padding: 5px;
@@ -384,7 +387,7 @@ a {
   margin-top: 10px;
   border-radius: 20px;
   background-color: #ccc;
-  background-image: url(./images/validation_icon.png), linear-gradient(180deg, #ccc,#aaa);
+  background-image: url(./images/validation_icon.png), linear-gradient(180deg, #aaa,#eee);
   background-repeat: no-repeat, repeat;
   background-position: 15px 50%, 0 0;
 }
@@ -410,6 +413,89 @@ a {
   background-color: #aaa;
   border: 1px solid #aaa;
 } */
+
+/* .term{
+  padding: 15px;
+  background-image: linear-gradient(180deg, #aaa,#eee);
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+.term-heading{
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.term-list{
+  margin-bottom: 0;
+  padding-left: 70px;
+  position: relative;
+}
+
+.term-list-subject{
+  margin-bottom: 1rem;
+  color: #296897;
+}
+.term-list-thumnail{
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+.term-list-brief{
+  margin: 0;
+} */
+/* 웹 관련 용어 */
+.term{
+  background-image: linear-gradient(180deg, #aaa,#eee);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+}
+.term-heading{
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.term-list{
+  margin-top: 10px;
+  margin: 0;
+}
+.term-list > div{
+  margin-top: 10px;
+  /* 만약 div태그를 없애게 되었을떄도 .term-listdml margin-top부분이 없어져도 괜찮아짐. */
+  /* .term-list 의 자식들중 div만 준다. */
+}
+
+.term-list-subject{
+  width: 145px;
+  float: right;
+  margin-bottom: 5px;
+  color: #296897;
+}
+
+.term-list-thumnail{
+  margin-left: 0;
+  font-size: 0;
+  float: left;
+}
+.term-list-brief{
+  margin-left: 0;
+  float: right;
+  width: 145px;
+}
+
+.even .term-list-subject,
+.even .term-list-brief{
+  float: left;
+}
+
+.even .term-list-thumnail{
+  float: right;
+}
 
 /* 슬로건 */
 .slogan{
