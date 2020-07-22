@@ -1,3 +1,81 @@
 @import url(./normalize.css);
 /* CSS reset 해주기. */
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+/*  */
+html{
+  font-size: 10px;
+}
 
+body{
+  font-size: 1.6rem;
+  color: #000;
+}
+
+header, .visual, main, article, footer{
+  width: 940px;
+  margin: 0 auto;
+}
+
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+/* 헤더 */
+header{
+  background-color: skyblue;
+  padding: 20px;
+}
+.logo{
+  display: inline-block;
+  background-color: red;
+  margin: 0;
+}
+
+.member [aria-hidden]{
+  margin: 0 5px;
+}
+.member{
+  float: right;
+  list-style: none;
+  width: 288px;
+  padding: 0;
+  background-color: yellow;
+  margin: 0;
+  font-size: 0;
+}
+
+.member li{
+  display: inline-block;
+  font-size: 1.4rem;
+}
+
+.member li a{
+  padding: 5px;
+}
+
+.member li a:nth-child(1)::before{
+  content: ':';
+}
+/* 비주얼 */
+.visual{
+  background-color: yellow;
+}
+
+main{
+  min-height: 450px;
+  background-color: #aaa;
+}
+
+article{
+  background-color: tomato;
+}
+
+.footer-bg{
+  background-color: purple;
+}
+footer{
+  background-color: blue;
+}
