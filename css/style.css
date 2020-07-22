@@ -497,6 +497,59 @@ a {
   float: right;
 }
 
+/* Group2 */
+.search-form{
+  width: 380px;
+  padding: 15px 25px 10px 25px;
+  background:#ccc linear-gradient(180deg, #aaa,#eee);
+  border: 1px solid #aaa;
+  border-bottom: 0;
+  border-radius: 15px 15px 0 0;
+}
+.search-form fieldset{
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+.search-form div[role='group']{
+  display: flex;
+  flex: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+/* fieldset에 flex주면 버그가 나서 안되므로 div[role='group']을 만들어서 처리했다.*/
+.search-form fieldset label::before{
+  content: '\e802';
+  font-family: 'fontello';
+  font-weight: normal;
+  display: inline-block;
+  margin-right: 0.2rem;
+}
+.search-form input[type='search']{
+  border: 1px solid #aaa;
+  padding: 1px 1px 1px 5px;
+  border-radius: 5px;
+  height: 24px;
+  flex-grow: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.search-form label, .search-form input{
+  white-space: nowrap;
+}
+/* 스타일은 id값을 잘 쓰지않는다. 그대신 속성선택자로 스타일 해준다 */
+
+.btn-search{
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #aaa;
+  font-size: 1.3rem;
+  height: 24px;
+  border-radius: 3px;
+  padding: 0 10px;
+}
+
 /* 슬로건 */
 .slogan{
   background-color: orange;

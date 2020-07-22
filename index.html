@@ -156,7 +156,21 @@
           </dl>
         </section>
       </div>
-      <div class="group group2">group2</div>
+      <div class="group group2">
+        <h2 class="a11y-hidden">검색</h2>
+        <form action="https://formspree.io/mwkrwgrg" class="search-form">
+          <fieldset>
+            <legend>검색 폼</legend>
+            <div role="group">
+            <label for="search">자료검색</label>
+            <input name='search' id="search" type="search" required placeholder="검색어를 입력하세요.">
+            <!-- 빈값이 넣어지지 않게끔 required을 넣어준다. 클라이언트 단계에서 검증을 해준다. 필수입력값임을 나타냄 이런것을 form vaildation 이라고 부른다.-->
+            <!-- input은 반드시 name / id / type 을 주고 label과 1:1로 대응시켜준다. -->
+            <button type='submit' class="btn-search">검색</button>
+            <!-- <input type="submit" value="검색"> 이렇게 해도된다. 하지만 value값을 넣어야 하기때문에 button 강사님 추천. --></div>
+          </fieldset>
+        </form>
+      </div>
       <div class="group group3">group3</div>
     </main>
     <article class="slogan">slogan</article>
