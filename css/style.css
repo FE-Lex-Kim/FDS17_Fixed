@@ -550,15 +550,108 @@ a {
   padding: 0 10px;
 }
 /* Group2 공지사항 및 자료실 */
+.board{
+  background-color: yellow;
+  margin-top: 20px;
+  position: relative;
+  min-height: 180px;
+}
+.notice-heading, .pds-heading{
+  background-color: pink;
+  float: left;
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.tab{
+  color: #666;
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 0 0;
+  padding: 5px 10px;
+  background:#ccc linear-gradient(180deg, #aaa,#eee);
+  display: block;
+}
+.tab-act .tab{
+  color: #ef962f;
+  border-color: #ef962f #ef962f #fff #ef962f;
+  background: #fff;
+}
+.notice-list, .pds-list, .notice-more, .pds-more{
+  display: none;
+}
+.tab-act .notice-list,.tab-act .pds-list,.tab-act .notice-more,.tab-act .pds-more{
+  display: block !important;
+}
+.notice-list, .pds-list{
+  background-color: silver;
+  list-style: none;
+  padding-left: 0;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+}
+.notice-list li::after, .pds-list li::after{
+  content:'';
+  display: block;
+  clear: both;
+}
+.notice-list a::before, .pds-list a::before{
+  content: '\f192';
+  font-family: 'fontello';
+  display: inline-block;
+  margin-right: .2em;
+}
+.notice-list a, .pds-list a{
+  float: left;
+  background-color: skyblue;
+  width: 300px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.notice-list time, .pds-list time{
+  float: right;
+  background-color: violet;
+}
+.notice-list li,.pds-list li{
+  background-color: orange;
+  margin-bottom: 10px;
+}
+
+.notice-more, .pds-more{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+/* -8px 만큼당기고 이동함. */
+}
+.icon-plus::before{
+  color: hsla(110, 70%, 50%, 1);
+}
+/* 내가만든거. */
 /* notice */
+/* 
 .board{
   position: relative;
   margin-top: 20px;
 }
 .notice-list{
   display: none;
-}
+} */
 /* tab-act가 아닌버젼도 만들기 .notice-heading*/
+/* .notice-heading{
+  width: 60px;
+  font-size: 1.4rem;
+  font-weight: normal;
+  padding: 8px 5px;
+  margin: 0;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px 5px 0 0;
+  color: rgb(102, 102, 102);
+  background:#ccc linear-gradient(180deg, #aaa,#eee);
+}
 .tab-act .notice-heading{
   width: 70px;
   font-size: 1.4rem;
@@ -570,6 +663,10 @@ a {
   border-radius: 5px 5px 0 0;
   color: red;
   border-bottom: 0;
+  background: none;
+}
+.notice-list{
+  display: none;
 }
 .tab-act .notice-list{
   display: block;
@@ -583,7 +680,7 @@ a {
 .tab-act .notice-list li>time{
   float: right;
 }
-.tab-act .notice-list li>a::before{
+.tab-act .notice-list li>a::before, .tab-act .pds-list li>a::before{
   content: '\f192';
   font-family: 'fontello';
   font-weight: normal;
@@ -597,9 +694,9 @@ a {
   top: 0;
   right: 0;
   color: green;
-}
+} */
 /* pds */
-.pds-list{
+/* .pds-list{
   display: none;
 }
 .pds-heading{
@@ -627,7 +724,7 @@ a {
   top:0;
   left:70px;
   background-color: #fff;
-}
+} */
 
 /* 슬로건 */
 .slogan{
