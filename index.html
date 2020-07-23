@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <title>웹카페- HTML, CSS3, 웹표준, 웹접근성</title>
   <link rel="stylesheet" type='text/css' href="css/style.css">
+  <script src="./js/jquery.min.js" defer></script>
+  <script src="./js/menu-tab.js" defer></script>
 </head>
 
 <body>
@@ -37,7 +39,7 @@
       <nav class="navigation">
         <h2 class="a11y-hidden">메인메뉴</h2>
         <ul class="menu">
-          <li class="menu-item menu-act">
+          <li class="menu-item">
             <button type='button' class="btn-menu">HTML에 대해</button>
             <ul class="sub-menu sub-menu1">
               <li><a href="#">HTML5 소개</a></li>
@@ -45,7 +47,7 @@
               <li><a href="#">활용예제</a></li>
             </ul>
           </li>
-          <li class="menu-item ">
+          <li class="menu-item">
             <button type='button' class="btn-menu">CSS에 대해</button>
             <ul class="sub-menu sub-menu2">
               <li><a href="#">CSS 소개</a></li>
@@ -228,6 +230,28 @@
             <a href="#" class="pds-more icon-plus" aria-labelledby="pdsHeading">더보기</a>
           </section>
         </div>
+        <section>
+          <section class="news">
+            <h2 class="news-heading" id="newsHeading">새소식</h2>
+            <article class="news-item">
+              <h3 class="news-item-subject">W3C 사이트가 리뉴얼 되었습니다.</h3>
+              <time class="news-item-date" datetime="2020-07-23T16:20:19">2020.07.23</time>
+              <p class="news-item-brief">
+                디자인 및 다양한 view 환경을 고려하여 구성되어 있으며, 
+                  기존보다 최신 정보 및 개발자를 위한 기술 가이드도 
+                  찾기 쉽도록 구성되어 있습니다.
+              </p>
+              <figure class="news-item-thumnail">
+                <img src="./images/news.gif" alt="새로운 표준인 HTML5를 발표하면서 새롭게 리뉴얼 된 W3C 사이트">
+                <figcaption>W3C 리뉴얼</figcaption>
+                <!-- figcaption은 위에있는 img에 대한 설명이라 alt가 없어도된다. 하지만 검색최적화 관점에서는 alt를 넣어야한다. -->
+                <!-- alt없으면 장식용 으로 쓰인다는 의미이다. -->
+              </figure>
+            </article>
+            <a href="#" class="news-more icon-plus" aria-labelledby="newsHeading">더보기</a>
+            <!-- 새소식과 연결되므로 aria-labelledby에 h2의 id을 만들어서 넣어줌. -->
+          </section>
+        </section>
       </div>
       <div class="group group3">group3</div>
     </main>

@@ -140,10 +140,14 @@ a {
 }
 .sub-menu{
   position: absolute;
+  display: none;
   margin: 0;
   padding-left: 0;
   list-style: none;
   white-space: nowrap;
+}
+.menu-act .sub-menu{
+  display: block;
 }
 .sub-menu li, .sub-menu a{
   display: inline-block;
@@ -171,24 +175,6 @@ a {
 }
 .sub-menu4,.sub-menu5,.sub-menu6{
   right: 0;
-}
-.sub-menu1{
-  display: block;
-}
-.sub-menu2{
-  display: none;
-}
-.sub-menu3{
-  display: none;
-}
-.sub-menu4{
-  display: none;
-}
-.sub-menu5{
-  display: none;
-}
-.sub-menu6{
-  display: none;
 }
 /* span태그를 선택한게아니라 [] 으로 선택해서 함 */
 /* 비주얼 */
@@ -551,17 +537,24 @@ a {
 }
 /* Group2 공지사항 및 자료실 */
 .board{
-  background-color: yellow;
   margin-top: 20px;
   position: relative;
-  min-height: 180px;
+  padding-top: 45px;
 }
 .notice-heading, .pds-heading{
-  background-color: pink;
-  float: left;
   margin: 0;
   font-size: 1.4rem;
   font-weight: 400;
+  position: absolute;
+  top: 0;
+}
+
+.notice-heading{
+  left: 0;
+}
+
+.pds-heading{
+  left: 74px;
 }
 .tab{
   color: #666;
@@ -583,13 +576,9 @@ a {
   display: block !important;
 }
 .notice-list, .pds-list{
-  background-color: silver;
   list-style: none;
   padding-left: 0;
-  position: absolute;
-  top: 30px;
-  left: 0;
-  width: 100%;
+  min-height: 130px;
 }
 .notice-list li::after, .pds-list li::after{
   content:'';
@@ -604,7 +593,6 @@ a {
 }
 .notice-list a, .pds-list a{
   float: left;
-  background-color: skyblue;
   width: 300px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -612,10 +600,8 @@ a {
 }
 .notice-list time, .pds-list time{
   float: right;
-  background-color: violet;
 }
 .notice-list li,.pds-list li{
-  background-color: orange;
   margin-bottom: 10px;
 }
 
