@@ -550,11 +550,16 @@ a {
   padding: 0 10px;
 }
 /* Group2 공지사항 및 자료실 */
+/* notice */
 .board{
-  background-color: orange;
   position: relative;
+  margin-top: 20px;
 }
-.notice-heading{
+.notice-list{
+  display: none;
+}
+/* tab-act가 아닌버젼도 만들기 .notice-heading*/
+.tab-act .notice-heading{
   width: 70px;
   font-size: 1.4rem;
   font-weight: normal;
@@ -566,19 +571,19 @@ a {
   color: red;
   border-bottom: 0;
 }
-.notice-list{
-  background-color: blue;
+.tab-act .notice-list{
+  display: block;
   margin-bottom: 0;
   padding: 0;
   list-style: none;
 }
-.notice-list li:not(:last-child){
+.tab-act .notice-list li:not(:last-child){
   margin-bottom: 16px;
 }
-.notice-list li>time{
+.tab-act .notice-list li>time{
   float: right;
 }
-.notice-list li>a::before{
+.tab-act .notice-list li>a::before{
   content: '\f192';
   font-family: 'fontello';
   font-weight: normal;
@@ -587,17 +592,43 @@ a {
   margin-right: .2em;
   text-align: center;
 }
-.notice-more{
-  background-color: purple;
+.tab-act .notice-more{
   position: absolute;
   top: 0;
   right: 0;
+  color: green;
 }
-
-
-.pds{
+/* pds */
+.pds-list{
   display: none;
 }
+.pds-heading{
+  float: right;
+  width: 60px;
+  font-size: 1.4rem;
+  font-weight: normal;
+  padding: 8px 5px;
+  margin: 0;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px 5px 0 0;
+  color: rgb(102, 102, 102);
+  background:#ccc linear-gradient(180deg, #aaa,#eee);
+}
+.pds-more{
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: green;
+}
+.pds-heading{
+  position: absolute;
+  top:0;
+  left:70px;
+  background-color: #fff;
+}
+
 /* 슬로건 */
 .slogan{
   background-color: orange;
