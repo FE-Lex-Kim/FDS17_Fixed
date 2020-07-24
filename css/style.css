@@ -42,7 +42,6 @@ body{
   clip: rect(0 0 0 0);
   clip: rect(0, 0, 0, 0);
   /* 전제조건 p:a */
-  /*  */
 }
 /* 링크 스타일 */
 a {
@@ -897,17 +896,16 @@ a {
   padding: 10px;
   background: #ccc linear-gradient(180deg, #ccc, #eee);
 }
-.event{
-  background-color: yellow;
-  border-bottom: 1px solid #aaa;
-  position: relative;
-}
-.event-heading{
+.event-heading, .related-heading{
   font-size: 1.6rem;
   margin: 0;
 }
-.event-heading span{
+.event-heading span, .related-heading span{
   color: #db5629;
+}
+.event{
+  border-bottom: 1px solid #aaa;
+  position: relative;
 }
 .event-thumnail, .event-brief{
   margin: 10px 0;
@@ -922,7 +920,6 @@ a {
 }
 .btn-wrap{
   position: absolute;
-  background-color: pink;
   top: 0;
   right: 0;
 }
@@ -940,6 +937,48 @@ a {
 .btn-next{
   background-position: -35px 0;
 }
+/* 관련 사이트 */
+.related{
+  margin-top: 10px;
+}
+.related-list{
+  background-color: #fff;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 10px 0 0 0;
+  height: 27px;
+  overflow: hidden;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  /* transition-property: padding, height, background-color;
+  transition-duration: 1000ms, 2000ms, 1000ms;
+  transition-delay: 0ms, 1000ms, 2000ms; */
+  transition: all 200ms;
+}
+.related-list li{
+  padding: 2px 5px;
+}
+.related-list a{
+  line-height: 21px;
+  display: block;
+  text-indent: 1em;
+}
+.related-list:hover{
+  height: 147px;
+  padding: 10px 0;
+  background-color: #ffc;
+}
+
+/* 
+.related-list:hover{
+  overflow: unset;
+  transition-property: height;
+  transition-duration: 4s;
+  height: auto;
+}
+.related-list li:not(:first-child){
+  margin-top: 5px;
+} */
 /* 슬로건 */
 .slogan{
   background-color: orange;
