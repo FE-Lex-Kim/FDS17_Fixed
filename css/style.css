@@ -39,6 +39,10 @@ body{
   margin: -1px;
   /* 마진 음수 공부해보기. */
   clip-path: polygon(0 0,0 0,0 0);
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  /* 전제조건 p:a */
+  /*  */
 }
 /* 링크 스타일 */
 a {
@@ -931,6 +935,7 @@ a {
   border: 0;
   padding: 0;
   cursor: pointer;
+  vertical-align: top;
 }
 .btn-next{
   background-position: -35px 0;
