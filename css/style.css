@@ -896,11 +896,13 @@ a {
   padding: 10px;
   background: #ccc linear-gradient(180deg, #ccc, #eee);
 }
-.event-heading, .related-heading{
+
+
+.event-heading, .related-heading, .favorite-heading{
   font-size: 1.6rem;
   margin: 0;
 }
-.event-heading span, .related-heading span{
+.event-heading span, .related-heading span, .favorite-heading span{
   color: #db5629;
 }
 .event{
@@ -978,6 +980,111 @@ a {
 }
 .related-list li:not(:first-child){
   margin-top: 5px;
+} */
+/* 인기 사이트 */
+.group3 .gradient-box:nth-child(2){
+  margin-top: 20px;
+}
+.favorite{
+  position: relative;
+}
+.favorite-more{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+.favorite-list{
+  margin: 10px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+/* .favorite-list li{
+  counter-increment: number;
+  margin-top: 5px;
+  position: relative;
+} */
+
+.favorite-list li{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  counter-increment: number;
+  margin-top: 5px;
+}
+.favorite-list li::before{
+  content: counter(number);
+  display: inline-block;
+  padding: 2px 5px;
+  color: #fff;
+  background-color: #aaa;
+  border-radius: 2px;
+  margin-right: 5px;
+  font-size: 1.3rem;
+}
+.favorite-list a{
+  flex-grow: 1;
+}
+.up, .down, .stop{
+  font-style: normal;
+  width: 9px;
+  height: 11px;
+  overflow: hidden;
+  padding-top: 11px;
+  background-image: url(./images/rank.png);
+  background-repeat: no-repeat;
+  /* 제일 윗 탑 부분을 50%에 고정한다 */
+}
+
+.up{
+  background-position: 0 0;
+}
+
+.down{
+  background-position: 0 50%;
+}
+
+.stop{
+  background-position: 0 100%;
+}
+/* }
+.favorite-list li{
+  margin-bottom: 8px;
+  line-height: 16px;
+  vertical-align: middle;
+}
+.favorite-list li a::before{
+  display: inline-block;
+  background-color: #aaa;
+  height: 18px;
+  width: 1.6rem;
+  font-size: 1.6rem;
+  vertical-align: bottom;
+  border-radius: 3px;
+  margin-right: 3px;
+  color: #fff;
+}
+.no1 a::before{
+  content: '1';
+}
+.favorite-list em{
+  float: right;
+  background-image: url(./images/rank.png);
+  background-repeat: no-repeat;
+  width: 9px;
+  height: 11px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 1rem;
+  vertical-align: baseline;
+  margin-top: 5px;
+}
+
+.down{
+  background-position: 0 -44px;
+}
+.stop{
+  background-position: 0 -20px;
 } */
 /* 슬로건 */
 .slogan{
