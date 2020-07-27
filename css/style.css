@@ -1132,6 +1132,8 @@ a {
 }
 .slogan-brief q::before{
   font-size: 3rem;
+  margin-right: 5px;
+  vertical-align: middle;
 }
 .slogan-brief q::after{
   content: '';
