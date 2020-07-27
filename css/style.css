@@ -1077,7 +1077,7 @@ a {
   white-space: nowrap;
   text-indent: 1rem;
   vertical-align: baseline;
-  margin-top: 5px;
+  margin-top: 5px
 }
 
 .down{
@@ -1088,8 +1088,53 @@ a {
 } */
 /* 슬로건 */
 .slogan{
-  background-color: orange;
+  position: relative;
+  padding: 15px 80px 15px 170px;
   /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
+}
+.slogan-heading{
+  width: 110px;
+  height: 83px;
+  position: absolute;
+  left: 35px;
+  bottom: -25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+/* p:a 안에 p:a이 올수있다. p:a 기준이 relative가 아닌 static이 아닌 요소이므로. */
+/* .slogan-heading span{
+  left: -99999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+} */
+.slogan-heading::after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url(./images/coffee.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.slogan-brief{
+  color: #a09784;
+  margin: 0;
+  line-height: 2em;
+  font-size: 1.3rem;
+}
+.slogan-brief q{
+  font-weight: 700;
+}
+.slogan-brief q::before{
+  font-size: 3rem;
+}
+.slogan-brief q::after{
+  content: '';
 }
 .footer-bg{
   background-color: purple;
@@ -1099,6 +1144,7 @@ a {
   align-items: center;
   /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
 }
+
 .footer{
   background-color: skyblue;
   /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
