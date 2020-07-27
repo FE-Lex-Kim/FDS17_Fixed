@@ -1138,19 +1138,108 @@ a {
 .slogan-brief q::after{
   content: '';
 }
+/* 푸터 */
 .footer-bg{
-  background-color: purple;
+  background: #ccc linear-gradient(180deg, #ccc, #eee);
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
   /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
+}
+.footer{  
+  padding: 15px 0;
+  position: relative;
+  padding: 0 100px 0 170px;
 }
 
-.footer{
-  background-color: skyblue;
-  /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
+/* 푸터 로고 */
+.footer-logo{
+  position: absolute;
+  top: 35px;
+  left: 35px;
 }
+/* 가이드 링크 */
+.guide-list{
+  margin: 0;
+  padding: 4px 20px;
+  /* 탭키로 넘길때 탭의 테투리 까지 고려해서 만들었음 */
+  list-style: none;
+  background-color: #7b8385;
+  color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  border-radius: 5px;
+  justify-content: space-between;
+}
+
+.guide-list a{
+  display: block;
+  padding: 6px 15px;
+  text-transform: uppercase;
+}
+/* 주소 및 연락처 */
+.address{
+  font-style: normal;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.address span{
+  margin-right: 10px;
+}
+/* 저작권 */
+.copyright{
+  font-size: 1.4rem;
+  display: block;
+}
+/* 적용 기술 배지 */
+.badge{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* 내가만든것. */
+/* .footer{
+  position: relative;
+  padding: 10px 100px 10px 168px; */
+  /* 색깔을 직접적으로 넣으면 나중에 지우는 임시적이라는 뜻 */
+/* }
+.footer-logo  {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+}
+.guide-list{
+  padding: 15px 30px;
+  text-align: center;
+  background-color: #7b8385;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.guide-list li{
+  list-style: none;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+}
+.guide-list li:not(:last-child){
+  margin-right: 25px;
+}
+.address{
+  font-style: normal;
+  margin-bottom: 5px;
+}
+.copyright{
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+.badge{
+  position: absolute;
+  top:10px;
+  right: 0;
+} */
 
 /* flow-direction 을 row 방식으로 하는것을 강사님이 추천함
 좀더 유연하게함 */
