@@ -1,8 +1,10 @@
 @import url(./normalize.css);
 @import url(./fontello.css);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 /* CSS reset 해주기. */
 *, *::after, *::before{
   box-sizing: border-box;
+  font-family: 'Spoqa Han Sans','Sans-serif';
 }
 /*  */
 html{
@@ -17,7 +19,7 @@ body{
 .a11y-hidden, legend{
   overflow: hidden; position: absolute; clip: rect(0 0 0 0); /* IE 6,7 */ clip: rect(0,0,0,0); width: 1px; height: 1px; margin: -1px; border: 0; padding: 0;
 }
-header, .visual, main, article, footer{
+header, .visual, main, footer{
   width: 940px;
   margin: 0 auto;
 }
@@ -28,8 +30,20 @@ header, .visual, main, article, footer{
   clear: both;
 }
 a{
-  color: #000;
+  color: inherit;
   text-decoration: none;
+}
+.icon-plus::before{
+  color: hsla(110,50%,30%,1);
+}
+.group1{
+  width: 250px;
+}
+.group2{
+  width: 380px;
+}
+.group3{
+  width: 190px;
 }
 /* 헤더 */
 header{
@@ -169,15 +183,13 @@ header{
 /* 메인 */
 main{
   min-height: 450px;
-  background-color: pink;
   padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: flex-start;
-}
-.group{
-  width: 250px;
 }
 /* 로그인 */
 .login{
@@ -190,7 +202,7 @@ main{
   margin: 0;
   font-size: 1.6rem;
   color: rgb(104, 100, 94);
-  padding: 10px 0px 10px 10px;
+  padding: 0 0px 10px 10px;
 }
 .login-form{
   background-color: #fff;
@@ -209,26 +221,27 @@ fieldset{
   border-bottom: 1px solid #ccc;
 }
 .login-id, .login-pw{
-  width: 170px;
+  width: 150px;
 }
 .login-id{
   margin-bottom: 5px;
 }
 .login-form label{
   display: inline-block;
-  width: 6rem;
+  width: 55px;
 }
 .login-form input{
-  width: 10rem; 
+  width: 90px; 
 }
 .login-button{
   position: absolute;
+  width: 50px;
+  height: 50px;
   font-size: 1.2rem;
   border: 0;
   border-radius: 3px;
   background-color: red;
   color: #fff;
-  padding: 18px 8px;
   top: 10px;
   right: 10px;
 }
@@ -320,10 +333,15 @@ fieldset{
 }
 /* 메인 */
 /* group2 */
+
 .search{
   background: linear-gradient(180deg, #ccc, #fff);
-  width: 350px;
-  padding: 15px;
+  width: 380px;
+  padding: 15px 15px 8px 15px;
+  border-radius: 15px 15px 0 0;
+  border: 1px solid #aaa;
+  border-bottom: 0;
+  margin: auto;
 }
 .search-form fieldset{
   padding: 0;
@@ -344,10 +362,132 @@ fieldset{
   font-size: 1.2rem;
   padding: 5px 9px;
 }
-/*  */
-article{
-  background-color: tomato;
+/* notice */
+.board{
+  position: relative;
+  width: 380px;
+  margin-top: 20px;
 }
+.notice-heading,.pds-heading{
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 400;
+  background: #ccc linear-gradient(180deg, #ccc, #aaa);
+  border: 1px solid #aaa;
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
+  margin: 0;
+  margin-bottom: 12px;
+}
+.notice-heading a,.pds-heading a{
+  display: inline-block;
+  color: #666666;
+  padding: 5px 8px;
+}
+.pds-heading{
+  position: absolute;
+  top: 0;
+  left: 70px;
+}
+.tab-act .notice-heading, .tab-act .pds-heading{
+  background: transparent;
+  border: 1px solid #ed552f;
+  border-bottom: 0;
+}
+
+.tab-act .notice-heading a,.tab-act .pds-heading a{
+  color: #ed552f;
+}
+
+.notice-list, .pds-list{
+  display: none;
+}
+.tab-act .notice-list, .tab-act .pds-list{
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  background-color: transparent;
+}
+.board ul a{
+  display: inline-block;
+  width: 280px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.board time{
+  float: right;
+}
+.board ul a::before{
+  content: '\f192';
+  font-family: 'fontello';
+  font-weight: normal;
+  display: inline-block;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+}
+.notice-list-more, .pds-list-more{
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 0;
+  font-size: 1.4rem;
+}
+.tab-act .notice-list-more, .tab-act .pds-list-more{
+  display: block;
+}
+/* 새소식 */
+.news{
+  font-size: 1.4rem;
+  position: relative;
+  margin-top: 10px;
+}
+.news-heading{
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ed552f;
+  padding: 15px 0;
+  border-bottom: 1px solid #aaa;
+  width: 300px;
+}
+.news-main{
+  padding-top: 15px;
+  padding-left: 150px;
+  position: relative;
+}
+.news-main-heading{
+  margin: 0;
+  font-size: 1.4rem;
+}
+.news-main p{
+  margin: 0;
+  margin-top: 7px;
+}
+.news-main-img{
+  position: absolute;
+  margin: 0;
+  top: 15px;
+  left: 0;
+}
+.news-main-img img{
+  display: block;
+  box-shadow: 5px 10px 6px #aaa;
+}
+.news-main-img figcaption{
+  margin-top: 13px;
+  text-align: center;
+}
+.news-more{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/*  */
 
 .footer-bg{
   background-color: purple;
